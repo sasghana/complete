@@ -1,0 +1,76 @@
+<mat-toolbar></mat-toolbar>
+<mat-card class="demo-card demo-basic">
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onPostIssue()">
+      <div class="px-xs pb-1">
+        <div fxFlex="33.33" class="px-xs">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Select" [formControl]="form.controls['priority']">
+              <mat-option *ngFor="let prior of priority" [value]="prior.value"> <em>{{ prior.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="" class="px-xs">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Name / Supplier" type="text" [formControl]="form.controls['name']" value="">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100">
+        <div fxFlex="33.33" class="px-xs">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Amount [GHS]" type="number" [formControl]="form.controls['amount']" value="">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="66.33" class="px-xs">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Amount in words" type="text" [formControl]="form.controls['amountInWords']"
+              value="">
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="100" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Purpose of the claim" [formControl]="form.controls['description']"></textarea>
+          </mat-form-field>
+        </div>
+        <!-- <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Areas Affected" [formControl]="form.controls['areasAffected']"></textarea>
+          </mat-form-field>
+        </div> -->
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100">
+        <div fxFlex="33.33" class="px-xs" style="display: none;">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Prepared By" type="text" [formControl]="form.controls['preparedBy']" value="{{username}}">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="33.33" class="px-xs">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Authorized By" [formControl]="form.controls['department']">
+              <mat-option *ngFor="let assign of assignto" [value]="assign.value"> <em>{{ assign.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="33.33" class="px-xs">
+            <mat-form-field class="w-100" floatLabel="">
+                <input matInput placeholder="Approved By" type="text" [formControl]="form.controls['approvedBy']" value="{{username}}">
+              </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>

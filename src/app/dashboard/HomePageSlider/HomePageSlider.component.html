@@ -1,0 +1,35 @@
+<ngu-carousel [inputs]="carouselBanner(isDirectionRtl)">
+   <ngu-item NguCarouselItem class="bannerStyle slider-img-1">
+     <div class="ngx-slider-content">
+       <div class="ngx-slider-inner">
+         <h2>Big Sale</h2>
+         <h1>Women's Summer Collection</h1>
+         <button color="accent" mat-raised-button [routerLink]="['/products/women']">Shop Now</button>
+       </div>
+     </div>
+   </ngu-item>
+   <ngu-item NguCarouselItem class="bannerStyle slider-img-2">
+     <div class="ngx-slider-content">
+       <div class="ngx-slider-inner">
+         <h2>50% Off</h2>
+         <h1>Men's Winter Collection</h1>
+         <button color="accent" mat-raised-button [routerLink]="['/products/men']">Shop Now</button>
+       </div>
+     </div>
+   </ngu-item>
+   <ngu-item NguCarouselItem class="bannerStyle slider-img-3 card-shadow">
+     <div class="ngx-slider-content">
+       <div class="ngx-slider-inner">
+         <h2>Today's Special</h2>
+         <h1>Sale On Jackets</h1>
+         <button color="accent" mat-raised-button [routerLink]="['/products/men']">Shop Now</button>
+       </div>
+     </div>
+   </ngu-item>
+   <button NguCarouselPrev class='arrow-left arrow'><i class="material-icons">
+       keyboard_arrow_left
+     </i></button>
+   <button NguCarouselNext class='arrow-right arrow'><i class="material-icons">
+       keyboard_arrow_right
+     </i></button>
+ </ngu-carousel>
